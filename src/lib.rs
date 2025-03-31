@@ -51,6 +51,8 @@
 
 #![feature(iter_array_chunks)]
 
+mod pylib;
+
 use pest::Parser;
 use pest_derive::Parser;
 use std::path::Path;
