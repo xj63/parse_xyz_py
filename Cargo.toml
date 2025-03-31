@@ -3,6 +3,12 @@ name = "parse-xyz-py"
 version = "0.1.0"
 edition = "2024"
 
+[lib]
+name = "parse_xyz_py"
+crate-type = ["cdylib", "rlib"]
+
 [dependencies]
 pest = "2.8.0"
 pest_derive = "2.8.0"
+numpy = "0.24.0"
+pyo3 = { version = "0.24.0", features = ["extension-module"] }
