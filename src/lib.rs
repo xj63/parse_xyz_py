@@ -49,8 +49,6 @@
 //!
 //! This crate is licensed under the MIT License.
 
-#![feature(iter_array_chunks)]
-
 mod pylib;
 
 use pest::Parser;
@@ -101,12 +99,15 @@ pub fn parse_xyz(data: &str) -> Vec<[f64; 3]> {
         .into_inner()
         .filter(|pair| pair.as_rule() == Rule::line)
         .map(|line| {
-            line.into_inner()
+            let mut nums = line
+                .into_inner()
                 .filter(|pair| pair.as_rule() == Rule::num)
-                .map(|num| num.as_str().parse::<f64>().unwrap())
-                .array_chunks::<3>()
-                .next()
-                .unwrap()
+                .map(|num| num.as_str().parse::<f64>().unwrap());
+            [
+                nums.next().unwrap(),
+                nums.next().unwrap(),
+                nums.next().unwrap(),
+            ]
         })
         .collect();
 
