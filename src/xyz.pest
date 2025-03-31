@@ -1,0 +1,5 @@
+int =  { ("+" | "-")? ~ ASCII_DIGIT+ }
+num = @{ int ~ ("." ~ ASCII_DIGIT*)? ~ (^"e" ~ int)? }
+
+line = { num ~ WHITE_SPACE+ ~ num ~ WHITE_SPACE+ ~ num ~ NEWLINE+ }
+file = { SOI ~ line* ~ EOI }
