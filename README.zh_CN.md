@@ -1,3 +1,8 @@
+<p align="right">
+  <a href="./README.md">English</a> / 简体中文
+</p>
+
+
 # parse-xyz-py
 
 一个快速高效的 Rust 驱动的 Python 库，用于解析字符串和文件中的 XYZ 坐标数据。

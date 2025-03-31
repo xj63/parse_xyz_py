@@ -1,3 +1,8 @@
+<p align="right">
+  English / <a href="./README.zh_CN.md">简体中文</a>
+</p>
+
+
 # parse-xyz-py
 
 A fast and efficient Rust-powered Python library for parsing XYZ coordinate data from strings and files.
