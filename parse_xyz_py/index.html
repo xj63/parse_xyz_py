@@ -1,0 +1,35 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="parse-xyz-py"><title>parse_xyz_py - Rust</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-6b053e98.ttf.woff2,FiraSans-Regular-0fe48ade.woff2,FiraSans-Medium-e1aa3f0a.woff2,SourceCodePro-Regular-8badfe75.ttf.woff2,SourceCodePro-Semibold-aa29a496.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../static.files/normalize-9960930a.css"><link rel="stylesheet" href="../static.files/rustdoc-46132b98.css"><meta name="rustdoc-vars" data-root-path="../" data-static-root-path="../static.files/" data-current-crate="parse_xyz_py" data-themes="" data-resource-suffix="" data-rustdoc-version="1.85.1 (4eb161250 2025-03-15)" data-channel="1.85.1" data-search-js="search-75f5ac3e.js" data-settings-js="settings-0f613d39.js" ><script src="../static.files/storage-59e33391.js"></script><script defer src="../crates.js"></script><script defer src="../static.files/main-5f194d8c.js"></script><noscript><link rel="stylesheet" href="../static.files/noscript-893ab5e7.css"></noscript><link rel="alternate icon" type="image/png" href="../static.files/favicon-32x32-6580c154.png"><link rel="icon" type="image/svg+xml" href="../static.files/favicon-044be391.svg"></head><body class="rustdoc mod crate"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle" title="show sidebar"></button></nav><nav class="sidebar"><div class="sidebar-crate"><h2><a href="../parse_xyz_py/index.html">parse_<wbr>xyz_<wbr>py</a><span class="version">0.1.0</span></h2></div><div class="sidebar-elems"><ul class="block"><li><a id="all-types" href="all.html">All Items</a></li></ul><section id="rustdoc-toc"><h3><a href="#">Sections</a></h3><ul class="block top-toc"><li><a href="#parse-xyz-py" title="parse-xyz-py">parse-xyz-py</a><ul><li><a href="#features" title="Features">Features</a></li><li><a href="#usage" title="Usage">Usage</a></li><li><a href="#grammar" title="Grammar">Grammar</a></li><li><a href="#license" title="License">License</a></li></ul></li></ul><h3><a href="#enums">Crate Items</a></h3><ul class="block"><li><a href="#enums" title="Enums">Enums</a></li><li><a href="#functions" title="Functions">Functions</a></li></ul></section><div id="rustdoc-modnav"></div></div></nav><div class="sidebar-resizer"></div><main><div class="width-limiter"><rustdoc-search></rustdoc-search><section id="main-content" class="content"><div class="main-heading"><h1>Crate <span>parse_xyz_py</span><button id="copy-path" title="Copy item path to clipboard">Copy item path</button></h1><rustdoc-toolbar></rustdoc-toolbar><span class="sub-heading"><a class="src" href="../src/parse_xyz_py/lib.rs.html#1-218">Source</a> </span></div><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><h2 id="parse-xyz-py"><a class="doc-anchor" href="#parse-xyz-py">§</a>parse-xyz-py</h2>
+<p>A simple Rust library for parsing XYZ coordinate data from strings and files.</p>
+<p>This crate provides functions to parse XYZ coordinate data, where each line
+represents a point in 3D space with x, y, and z coordinates separated by
+whitespace.  It uses the <code>pest</code> parser generator for efficient and robust parsing.</p>
+<h3 id="features"><a class="doc-anchor" href="#features">§</a>Features</h3>
+<ul>
+<li>Parses XYZ coordinate data from strings.</li>
+<li>Parses XYZ coordinate data from files.</li>
+<li>Provides detailed documentation and comprehensive unit tests.</li>
+</ul>
+<h3 id="usage"><a class="doc-anchor" href="#usage">§</a>Usage</h3>
+<p>Add the following to your <code>Cargo.toml</code>:</p>
+<div class="example-wrap"><pre class="language-sh"><code>$ cargo add parse-xyz-py</code></pre></div>
+<p>Then, you can use the library in your Rust code:</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>parse_xyz_py::parse_xyz;
+
+<span class="kw">let </span>data = <span class="string">"1.0 2.0 3.0\n4.0 5.0 6.0\n"</span>;
+<span class="kw">let </span>points = parse_xyz(data);
+<span class="macro">assert_eq!</span>(points, <span class="macro">vec!</span>[[<span class="number">1.0</span>, <span class="number">2.0</span>, <span class="number">3.0</span>], [<span class="number">4.0</span>, <span class="number">5.0</span>, <span class="number">6.0</span>]]);</code></pre></div>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>parse_xyz_py::parse_xyz_file;
+
+<span class="comment">// Assuming you have a file named "coordinates.xyz"
+</span><span class="kw">let </span>file_path = <span class="string">"coordinates.xyz"</span>;
+<span class="kw">let </span>points = parse_xyz_file(file_path);
+<span class="comment">// Do something with the parsed points</span></code></pre></div>
+<h3 id="grammar"><a class="doc-anchor" href="#grammar">§</a>Grammar</h3>
+<p>The XYZ coordinate data is parsed according to the grammar defined in the
+<code>xyz.pest</code> file.  This grammar specifies the allowed number formats, whitespace
+separation, and line structure.</p>
+<h3 id="license"><a class="doc-anchor" href="#license">§</a>License</h3>
+<p>This crate is licensed under the MIT License.</p>
+</div></details><h2 id="enums" class="section-header">Enums<a href="#enums" class="anchor">§</a></h2><ul class="item-table"><li><div class="item-name"><a class="enum" href="enum.Rule.html" title="enum parse_xyz_py::Rule">Rule</a></div></li></ul><h2 id="functions" class="section-header">Functions<a href="#functions" class="anchor">§</a></h2><ul class="item-table"><li><div class="item-name"><a class="fn" href="fn.parse_xyz.html" title="fn parse_xyz_py::parse_xyz">parse_<wbr>xyz</a></div><div class="desc docblock-short">Parses a string containing XYZ coordinates into a vector of <code>[f64; 3]</code> arrays.</div></li><li><div class="item-name"><a class="fn" href="fn.parse_xyz_file.html" title="fn parse_xyz_py::parse_xyz_file">parse_<wbr>xyz_<wbr>file</a></div><div class="desc docblock-short">Parses an XYZ coordinate file into a vector of <code>[f64; 3]</code> arrays.</div></li></ul></section></div></main></body></html>

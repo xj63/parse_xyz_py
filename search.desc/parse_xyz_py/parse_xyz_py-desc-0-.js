@@ -1,0 +1,1 @@
+searchState.loadedDescShard("parse_xyz_py", 0, "parse-xyz-py\nEnd-of-input\nReturns the argument unchanged.\nCalls <code>U::from(self)</code>.\nParses a string containing XYZ coordinates into a vector …\nParses an XYZ coordinate file into a vector of <code>[f64; 3]</code> …")

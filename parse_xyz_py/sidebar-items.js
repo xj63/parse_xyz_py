@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["Rule"],"fn":["parse_xyz","parse_xyz_file"]};
