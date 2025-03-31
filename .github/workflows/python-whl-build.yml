@@ -179,7 +179,7 @@ jobs:
         with:
           command: upload
           args: --non-interactive --skip-existing wheels-*/*
-          
+
   github_release:
     name: Create GitHub Release
     runs-on: ubuntu-latest
